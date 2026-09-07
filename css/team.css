@@ -1,15 +1,14 @@
-/* 团队成员：参考图式极简居中分层布局 */
-#team{background:#fff;color:#111;overflow:hidden}
-#team .team-page{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;padding:34px 5vw 22px}
+/* 团队成员：参考图式极简居中分层布局；标题与成员作为一个整体滚动 */
+#team{background:#fff;color:#111;overflow-y:auto;overflow-x:hidden}
+#team .team-page{width:100%;min-height:100%;height:auto;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;padding:34px 5vw 42px}
 #team .team-title{text-align:center;flex:0 0 auto}
 #team .team-title>span{display:block;font-size:9px;letter-spacing:.28em;color:#0b6653;margin-bottom:5px}
 #team .team-title h2{margin:0;color:#111;font-size:27px;font-weight:500;line-height:1.15}
 #team .team-title i{display:block;width:42px;height:2px;background:#0b6653;margin:10px auto 20px}
-#team .team-roster{width:min(920px,100%);height:auto;flex:1;overflow-y:auto;overflow-x:hidden;padding:0 18px 18px;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:rgba(11,102,83,.28) transparent}
-#team .team-roster::-webkit-scrollbar{width:5px}
-#team .team-roster::-webkit-scrollbar-track{background:transparent}
-#team .team-roster::-webkit-scrollbar-thumb{background:rgba(11,102,83,.25);border-radius:5px}
-#team .team-tier{text-align:center;margin:0 0 20px}
+/* 不再让标题和成员分别处于两个滚动区域 */
+#team .team-roster{width:min(920px,100%);height:auto;flex:0 0 auto;overflow:visible;padding:0 18px 18px;box-sizing:border-box;scrollbar-width:none}
+#team .team-roster::-webkit-scrollbar{display:none}
+#team .team-tier{text-align:center;margin:0 0 24px}
 #team .team-tier:last-child{margin-bottom:0}
 #team .team-tier-title{margin:0;color:#111;font-size:17px;font-weight:500;line-height:1.2}
 #team .team-tier-en{margin-top:4px;color:#0b6653;font-size:8px;letter-spacing:.18em;text-transform:uppercase}
@@ -47,4 +46,4 @@
 .profile-meta{border-top:1px solid rgba(7,87,68,.12);padding-top:16px}.profile-meta a,.profile-meta span{display:block;color:#4e7067;font-size:11px;padding:7px 0;word-break:break-all}.profile-meta strong{color:#07523f}
 .profile-main{padding:48px 55px;overflow:auto}.profile-kicker{font:10px 'Space Grotesk';letter-spacing:.18em;color:#08785f}.profile-main h3{font-size:32px;color:#07523f;margin:8px 0 24px}.profile-tabs{display:flex;gap:6px;border-bottom:1px solid rgba(7,87,68,.13);margin-bottom:28px}.profile-tab{border:0;background:none;padding:12px 18px;color:#66827a;font-size:12px;cursor:pointer;position:relative}.profile-tab.active{color:#07523f;font-weight:700}.profile-tab.active:after{content:'';position:absolute;left:10px;right:10px;bottom:-1px;height:2px;background:#08785f}.profile-pane{display:none;color:#4f7168;font-size:13px;line-height:2}.profile-pane.active{display:block;animation:pane-in .25s ease}.profile-pane h4{color:#07523f;margin:0 0 10px;font-size:18px}.profile-pane ul{padding-left:20px}.paper-item{padding:14px 0;border-bottom:1px solid rgba(7,87,68,.1)}.paper-item strong{display:block;color:#07523f;font-size:13px}.paper-item span{font-size:10px;color:#6a837d}.hobby-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.hobby-card{min-height:115px;border:1px solid rgba(7,87,68,.12);background:#f7fcfa;padding:15px}.hobby-card strong{display:block;color:#08785f;margin-bottom:8px}.hobby-card span{font-size:11px;color:#628078}.photo-placeholder{border:1px dashed rgba(7,87,68,.18);padding:28px;text-align:center;color:#789189;background:#fbfefd;margin-top:14px}
 @keyframes profile-in{from{opacity:0;transform:scale(.99)}to{opacity:1;transform:scale(1)}}@keyframes pane-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:900px){#team .team-page{padding:28px 16px 18px}#team .team-title h2{font-size:24px}#team .team-roster{padding:0 8px 18px}#team .team-roster-grid{gap:28px 55px}#team .team-member{width:125px}#team .member-avatar-wrap{width:68px;height:68px;flex-basis:68px}.profile-modal{padding:12px}.profile-shell{display:block;overflow:auto}.profile-side{border-right:0;border-bottom:1px solid rgba(7,87,68,.12);padding:28px 20px}.profile-avatar{width:135px;height:135px}.profile-side h2{font-size:24px}.profile-main{padding:28px 20px}.hobby-grid{grid-template-columns:1fr 1fr}.profile-tabs{overflow:auto}.profile-tab{white-space:nowrap}}
+@media(max-width:900px){#team .team-page{padding:28px 16px 34px}#team .team-title h2{font-size:24px}#team .team-roster{padding:0 8px 18px;overflow:visible}#team .team-roster-grid{gap:28px 55px}#team .team-member{width:125px}#team .member-avatar-wrap{width:68px;height:68px;flex-basis:68px}.profile-modal{padding:12px}.profile-shell{display:block;overflow:auto}.profile-side{border-right:0;border-bottom:1px solid rgba(7,87,68,.12);padding:28px 20px}.profile-avatar{width:135px;height:135px}.profile-side h2{font-size:24px}.profile-main{padding:28px 20px}.hobby-grid{grid-template-columns:1fr 1fr}.profile-tabs{overflow:auto}.profile-tab{white-space:nowrap}}
