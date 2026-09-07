@@ -1,4 +1,5 @@
 (()=>{
+const style=document.createElement('link');style.rel='stylesheet';style.href='css/team-static.css';document.head.appendChild(style);
 const professor=document.querySelector('.team-tier');
 if(!professor)return;
 const card=document.createElement('article');
