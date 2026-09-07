@@ -1,0 +1,9 @@
+/* 团队头像静态样式：取消圆形、取消旋转 */
+.member-avatar-wrap{position:relative!important;flex:0 0 118px!important;width:118px!important;height:148px!important;border-radius:6px!important;padding:2px!important;background:linear-gradient(135deg,#1688a6,#5ad6ee,#08785f)!important;transition:transform .25s,box-shadow .25s!important}
+.member-avatar-wrap:before{inset:2px!important;border-radius:4px!important;background:#fff!important}
+.team-member:hover .member-avatar-wrap{animation:none!important;transform:translateY(-2px)!important;box-shadow:0 8px 24px rgba(8,120,95,.16)!important}
+.member-avatar{border-radius:4px!important;width:100%!important;height:100%!important}
+.member-tags{left:2px!important;right:2px!important;top:2px!important;bottom:2px!important;border-radius:4px!important;padding-bottom:10px!important}
+.profile-avatar{width:205px!important;height:245px!important;border-radius:6px!important;padding:3px!important;background:linear-gradient(135deg,#1688a6,#5ad6ee,#08785f)!important;animation:none!important}
+.profile-avatar-inner{border-radius:4px!important}
+@media(max-width:900px){.member-avatar-wrap{flex-basis:92px!important;width:92px!important;height:118px!important}.profile-avatar{width:135px!important;height:165px!important}}
